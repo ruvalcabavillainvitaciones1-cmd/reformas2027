@@ -1,0 +1,66 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "staff": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    "invitados": {
+      ".read": "auth != null && root.child('staff/' + auth.uid).exists()",
+      ".write": "auth != null && root.child('staff/' + auth.uid).val() === 'admin'",
+      "$clave": {
+        ".read": true,
+        ".validate": "$clave.length === 64 && $clave.matches(/^[a-f0-9]+$/) && newData.hasChildren(['nombre', 'correo', 'folio'])",
+        "nombre": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 150" },
+        "empresa": { ".validate": "newData.isString() && newData.val().length <= 200" },
+        "correo": { ".validate": "newData.isString() && newData.val().length <= 254" },
+        "folio": { ".validate": "newData.isString() && newData.val().length <= 20" },
+        "origen": { ".validate": "newData.isString() && newData.val().length <= 20" },
+        "$otro": { ".validate": false }
+      }
+    },
+
+    "confirmaciones": {
+      ".read": "auth != null && root.child('staff/' + auth.uid).exists()",
+      ".write": "auth != null && root.child('staff/' + auth.uid).val() === 'admin'",
+      "$clave": {
+        ".read": true,
+        ".write": "!data.exists() && root.child('invitados/' + $clave).exists()",
+        ".validate": "newData.isNumber() && newData.val() === now"
+      }
+    },
+
+    "asistencias": {
+      ".read": "auth != null && root.child('staff/' + auth.uid).exists()",
+      "$clave": {
+        ".write": "auth != null && root.child('staff/' + auth.uid).exists() && (!data.exists() || root.child('staff/' + auth.uid).val() === 'admin')",
+        ".validate": "newData.hasChildren(['en', 'por']) && root.child('invitados/' + $clave).exists()",
+        "en": { ".validate": "newData.isNumber() && newData.val() === now" },
+        "por": { ".validate": "newData.isString() && newData.val() === auth.uid" },
+        "$otro": { ".validate": false }
+      }
+    },
+
+    "espera": {
+      ".read": "auth != null && root.child('staff/' + auth.uid).val() === 'admin'",
+      ".write": "auth != null && root.child('staff/' + auth.uid).val() === 'admin'",
+      "$clave": {
+        ".write": "!data.exists() && !root.child('invitados/' + $clave).exists()",
+        ".validate": "$clave.length === 64 && $clave.matches(/^[a-f0-9]+$/) && newData.hasChildren(['nombre', 'empresa', 'correo', 'en', 'estado'])",
+        "nombre": { ".validate": "newData.isString() && newData.val().length > 1 && newData.val().length <= 150" },
+        "empresa": { ".validate": "newData.isString() && newData.val().length <= 200" },
+        "correo": { ".validate": "newData.isString() && newData.val().length <= 254 && newData.val().matches(/^[^@ ]+@[^@ ]+\\.[^@ ]+$/)" },
+        "en": { ".validate": "newData.isNumber() && (newData.val() === now || newData.val() === data.val())" },
+        "estado": {
+          ".read": true,
+          ".validate": "newData.val() === 'pendiente' || ((newData.val() === 'aceptado' || newData.val() === 'descartado') && auth != null && root.child('staff/' + auth.uid).val() === 'admin')"
+        },
+        "$otro": { ".validate": false }
+      }
+    }
+  }
+}

@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1E2A44">
+<meta name="description" content="Registro de asistencia a Reformas Fiscales 2027, conferencia para clientes y amigos de Ruvalcaba Villalobos Consultores Fiscales.">
+<title>Reformas Fiscales 2027 | Registro de asistencia</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Cabin:wght@400..700&display=swap">
+<style>
+:root{
+  --marino:#1E2A44;--oro:#C1A55C;--oro-claro:#D9C184;--marfil:#F2EDE1;--texto-2:#C9C5BA;
+  --gris:#7F889C;--rojo:#E0282E;--verde:#0B6B6A;--tinta:#3E4863;--tinta-2:#4A5470;--error:#9B1C1C;
+  --display:'Bodoni Moda','Bodoni 72',Didot,'Times New Roman',serif;
+  --texto:'Cabin','Gill Sans','Gill Sans MT','Segoe UI',system-ui,sans-serif;
+  color-scheme:dark;box-sizing:border-box;background:var(--marino);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--marino);color:var(--marfil);font-family:var(--texto);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+p{margin:0}
+img{max-width:100%;height:auto}
+a{color:var(--oro);text-underline-offset:3px}
+a:hover{color:var(--oro-claro)}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px}
+.marco{position:relative;overflow:hidden}
+.fondo{position:absolute;z-index:0;top:0;right:0;width:min(1100px,175vw);aspect-ratio:1/1;transform:translate(42%,-40%);opacity:.42;pointer-events:none;user-select:none}
+.saltar{position:absolute;left:16px;top:-80px;z-index:5;padding:10px 14px;border-radius:8px;background:var(--marfil);color:var(--marino);font-weight:600}
+.saltar:focus{top:16px}
+.aviso-demo{position:relative;z-index:2;padding:10px 24px;background:var(--oro);color:var(--marino);font-size:14px;line-height:1.4;text-align:center}
+.pagina{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:28px 24px 0;display:grid;grid-template-columns:minmax(0,1fr);row-gap:36px}
+
+/* portada */
+.logo{display:block;width:66px}
+.titulo{margin:40px 0 0;font-family:var(--display);font-weight:500;color:var(--marfil)}
+.titulo-texto{display:block;font-size:clamp(3.25rem,11vw + .5rem,5.75rem);line-height:.98;letter-spacing:-.01em}
+.anio-viejo{position:relative;display:inline-block;margin:.3em 0 0 -.08em;padding:0 .08em;text-decoration:none;color:var(--gris);font-size:clamp(2.25rem,6vw + .5rem,3.5rem);line-height:1}
+.tachado{position:absolute;left:0;right:0;top:46%;height:max(3px,.08em);background:var(--rojo);transform-origin:0 50%;animation:tachar .7s cubic-bezier(.65,0,.25,1) .5s both}
+.anio-nuevo{display:block;margin:.02em 0 0 -.035em;text-decoration:none;color:var(--oro);font-size:clamp(8.5rem,34vw,13rem);line-height:.82;letter-spacing:-.02em;animation:entrar .9s cubic-bezier(.2,.7,.2,1) 1.15s both}
+@keyframes tachar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes entrar{from{opacity:0;transform:translateY(.12em)}to{opacity:1;transform:none}}
+.subtitulo{margin-top:14px;font-family:var(--display);font-style:italic;font-size:clamp(1.3rem,1.2vw + 1rem,1.75rem);line-height:1.25}
+
+/* contador */
+.cuenta{margin-top:36px}
+.cuenta-titulo{margin-bottom:10px;font-size:15px;color:var(--texto-2)}
+.cuenta-rejilla{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(193,165,92,.55);border-bottom:1px solid rgba(193,165,92,.55)}
+.unidad{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 0 12px}
+.unidad+.unidad{border-left:1px solid rgba(242,237,225,.14)}
+.unidad b{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,8vw,3.25rem);line-height:1;color:var(--oro);font-variant-numeric:tabular-nums}
+.unidad span{font-size:12px;color:var(--texto-2)}
+.cuenta-mensaje{padding:16px 0;border-top:1px solid rgba(193,165,92,.55);border-bottom:1px solid rgba(193,165,92,.55);font-family:var(--display);font-size:22px;line-height:1.3;color:var(--oro)}
+
+/* datos */
+.detalles{margin-top:32px;display:flex;flex-direction:column;gap:2px}
+.fecha{font-weight:600;font-size:19px;line-height:1.35}
+.dato{font-size:16px;line-height:1.45;color:var(--texto-2)}
+.enlace{align-self:flex-start;display:inline-block;margin-top:2px;padding:10px 0;font-size:15px}
+
+/* panel y tarjetas */
+.panel{display:flex;flex-direction:column;gap:14px;outline:none}
+.tarjeta{position:relative;padding:24px 20px;border-radius:16px;background:var(--marfil);color:var(--marino)}
+.tarjeta-titulo{margin:0;font-family:var(--display);font-weight:500;font-size:28px;line-height:1.15;color:var(--marino);outline:none}
+.tarjeta-empresa{margin-top:4px;font-size:15px;color:var(--tinta-2)}
+.tarjeta-texto{margin-top:10px;font-size:15px;line-height:1.5;color:var(--tinta)}
+.tarjeta-texto strong{color:var(--marino);word-break:break-all}
+.formulario{margin-top:18px;display:flex;flex-direction:column}
+.formulario label{margin-top:14px;font-size:14px;font-weight:600;line-height:1.3}
+.formulario label:first-child{margin-top:0}
+.formulario input{width:100%;height:52px;margin-top:8px;padding:0 14px;border:1.5px solid #7C849A;border-radius:10px;background:#fff;color:var(--marino);font:inherit;font-size:17px}
+.formulario input:focus-visible{outline:3px solid var(--oro);outline-offset:2px;border-color:var(--marino)}
+.formulario input[aria-invalid="true"]{border-color:var(--error)}
+.error{margin-top:8px;font-size:14px;line-height:1.4;color:var(--error)}
+.boton{appearance:none;display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:16px;padding:0 18px;border:0;border-radius:10px;background:var(--marino);color:var(--marfil);font:inherit;font-size:17px;font-weight:600;line-height:1.2;text-align:center;text-decoration:none;cursor:pointer}
+.boton:hover{background:#27365A;color:var(--marfil)}
+.boton[disabled]{opacity:.65;cursor:progress}
+.boton-oro{margin-top:0;background:var(--oro);color:var(--marino)}
+.boton-oro:hover{background:var(--oro-claro);color:var(--marino)}
+.boton-linea{margin-top:0;border:1.5px solid rgba(242,237,225,.55);background:transparent;color:var(--marfil)}
+.boton-linea:hover{background:rgba(242,237,225,.08)}
+.boton-texto{appearance:none;align-self:center;margin-top:4px;padding:12px 8px;border:0;background:none;color:inherit;font:inherit;font-size:15px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.letra-chica{margin-top:14px;font-size:13px;line-height:1.5;color:var(--tinta-2)}
+.letra-chica a{color:var(--marino)}
+
+/* pase */
+.saludo{margin:0;font-family:var(--display);font-weight:500;font-size:34px;line-height:1.12;outline:none}
+.saludo-sub{margin-top:6px;font-size:17px;color:var(--texto-2)}
+.pase{display:flex;flex-direction:column;align-items:center;padding:22px 22px 20px;border-radius:18px}
+.pase-evento{align-self:stretch;font-family:var(--display);font-weight:500;font-size:22px;line-height:1.2}
+.qr{width:min(240px,100%);aspect-ratio:1/1;margin-top:16px;padding:6px;border-radius:8px;background:#fff}
+.qr svg{display:block;width:100%;height:100%}
+.pase-folio{align-self:stretch;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;font-size:14px;color:var(--tinta-2);font-variant-numeric:tabular-nums}
+.sello{display:inline-block;padding:4px 10px;border:2px solid var(--verde);border-radius:6px;box-shadow:0 0 0 2px var(--marfil),0 0 0 3px var(--verde);color:var(--verde);font-weight:700;font-size:13px;letter-spacing:.04em;transform:rotate(-6deg)}
+.sello.nuevo{animation:sellar .5s cubic-bezier(.2,.8,.2,1) .2s both}
+@keyframes sellar{0%{opacity:0;transform:rotate(-6deg) scale(1.9)}60%{opacity:1;transform:rotate(-6deg) scale(.94)}100%{opacity:1;transform:rotate(-6deg) scale(1)}}
+.perforado{position:relative;align-self:stretch;margin:18px -22px 0;border-top:2px dashed rgba(30,42,68,.22)}
+.perforado::before,.perforado::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--marino)}
+.perforado::before{left:-11px}
+.perforado::after{right:-11px}
+.pase-datos{align-self:stretch;display:flex;flex-direction:column;gap:2px;margin-top:16px;font-size:15px;line-height:1.45}
+.pase-nombre{font-weight:600;font-size:17px}
+.pase-empresa{margin-bottom:8px;color:var(--tinta-2)}
+.nota{font-size:15px;line-height:1.5;color:var(--texto-2);text-align:center}
+.par{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.par .boton{padding:0 10px;font-size:16px}
+.aviso-flotante{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:10;max-width:min(92vw,420px);padding:12px 16px;border-radius:10px;background:var(--marfil);color:var(--marino);font-size:15px;line-height:1.4;transform:translateX(-50%);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+
+/* pie */
+.pie{grid-column:1/-1;margin-top:24px;padding:22px 0 36px;border-top:1px solid rgba(242,237,225,.18);display:flex;flex-direction:column;gap:14px;font-size:14px;color:var(--texto-2)}
+.pie-marca{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px}
+.cupo{margin-top:2px;color:var(--oro);font-weight:600}
+.pie-marca img{flex-shrink:0;width:69px}
+
+@media (min-width:960px){
+  .pagina{grid-template-columns:minmax(0,1fr) minmax(360px,420px);column-gap:72px;padding:48px 48px 0;align-items:start}
+  .panel{position:sticky;top:40px;margin-top:150px}
+  .logo{width:82px}
+  .fondo{width:1200px;transform:translate(30%,-38%);opacity:.3}
+  .pie{flex-direction:row;align-items:center;justify-content:space-between}
+  .pie-marca{gap:24px}
+}
+@media (prefers-reduced-motion:reduce){.tachado,.anio-nuevo,.sello.nuevo{animation:none}}
+</style>
+</head>
+<body>
+<div class="marco">
+  <img class="fondo" src="assets/guilloche.svg" alt="">
+  <a class="saltar" href="#panel">Ir al registro</a>
+  <p class="aviso-demo" id="avisoDemo" hidden>Vista previa con datos de ejemplo: prueba con <strong>invitado@ejemplo.com</strong>, o con cualquier otro correo para ver la lista de espera.</p>
+  <main class="pagina">
+    <section class="portada" aria-labelledby="titulo">
+      <img class="logo" src="assets/logo-rv.png" alt="Ruvalcaba Villalobos Consultores Fiscales" width="176" height="240">
+      <h1 class="titulo" id="titulo">
+        <span class="titulo-texto">Reformas<br>Fiscales</span>
+        <del class="anio-viejo" aria-hidden="true">2026<span class="tachado"></span></del>
+        <ins class="anio-nuevo">2027</ins>
+      </h1>
+      <p class="subtitulo">Conferencia para clientes y amigos</p>
+      <div class="cuenta" id="cuenta" role="timer" aria-live="off">
+        <p class="cuenta-titulo">Faltan</p>
+        <div class="cuenta-rejilla">
+          <div class="unidad"><b id="cDias">--</b><span>días</span></div>
+          <div class="unidad"><b id="cHoras">--</b><span>horas</span></div>
+          <div class="unidad"><b id="cMin">--</b><span>minutos</span></div>
+          <div class="unidad"><b id="cSeg">--</b><span>segundos</span></div>
+        </div>
+      </div>
+      <div class="detalles">
+        <p class="fecha" data-fecha>Jueves 3 de diciembre de 2026</p>
+        <p class="dato" data-horario>16:00 a 19:30 h</p>
+        <p class="dato" data-lugar>Hotel RIU, Guadalajara</p>
+        <a class="enlace" data-mapa href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Riu+Plaza+Guadalajara" target="_blank" rel="noopener">Ver en el mapa</a>
+      </div>
+    </section>
+
+    <section class="panel" id="panel" tabindex="-1" aria-label="Registro de asistencia">
+      <div class="tarjeta">
+        <h2 class="tarjeta-titulo">Confirma tu asistencia</h2>
+        <p class="tarjeta-texto">Escribe el correo en el que recibiste la invitación y te mostramos tu pase de acceso.</p>
+        <noscript><p class="error">Para registrarte, activa JavaScript en tu navegador.</p></noscript>
+      </div>
+    </section>
+
+    <footer class="pie">
+      <div><p>Invitación personal e intransferible.</p><p class="cupo">Cupo limitado.</p></div>
+      <div class="pie-marca">
+        <span>Ruvalcaba Villalobos Consultores Fiscales, miembro de</span>
+        <img src="assets/logo-taxpro.png" alt="TaxPro" width="221" height="115">
+      </div>
+    </footer>
+  </main>
+</div>
+
+<script src="config.js"></script>
+<script src="comun.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script>
+(function () {
+  'use strict';
+  var E = RF.evento, el = RF.el;
+  var $ = function (s) { return document.querySelector(s); };
+  var panel = $('#panel');
+  var LLAVE = 'rf27_pase';
+  var enMarco = window.top !== window;
+
+  /* ---------- datos del evento desde config.js ---------- */
+  document.querySelectorAll('[data-fecha]').forEach(function (n) { n.textContent = RF.fechaLarga(RF.inicio); });
+  document.querySelectorAll('[data-horario]').forEach(function (n) { n.textContent = RF.horario(); });
+  document.querySelectorAll('[data-lugar]').forEach(function (n) { n.textContent = E.lugar; });
+  document.querySelectorAll('[data-mapa]').forEach(function (n) { n.href = E.mapa; });
+  if (RF.demo) $('#avisoDemo').hidden = false;
+
+  /* ---------- contador ---------- */
+  var cuenta = $('#cuenta'), cD = $('#cDias'), cH = $('#cHoras'), cM = $('#cMin'), cS = $('#cSeg');
+  var dos = function (n) { return String(n).padStart(2, '0'); };
+  var etapaActual = null;
+  function tic() {
+    var etapa = RF.etapa();
+    if (etapa !== etapaActual) {
+      var anterior = etapaActual;
+      etapaActual = etapa;
+      if (etapa !== 'antes') {
+        cuenta.replaceChildren(el('p', { class: 'cuenta-mensaje' },
+          etapa === 'durante' ? 'La conferencia está en curso. Te esperamos en ' + E.lugar + '.' : 'Gracias por acompañarnos.'));
+      }
+      if (etapa === 'despues' && anterior !== null) pintarCerrado();
+    }
+    if (etapa === 'antes') {
+      var f = RF.faltante();
+      cD.textContent = f.d; cH.textContent = dos(f.h); cM.textContent = dos(f.m); cS.textContent = dos(f.s);
+    }
+  }
+
+  /* ---------- de dónde salen los datos ---------- */
+  var fuente = null;
+  async function obtenerFuente() {
+    if (!fuente) fuente = RF.demo ? await fuenteDemo() : await fuenteFirebase();
+    return fuente;
+  }
+
+  async function fuenteDemo() {
+    var muestra = [{ correo: 'invitado@ejemplo.com', nombre: 'Invitado de prueba', empresa: 'Empresa de ejemplo, S.A. de C.V.', folio: E.prefijoFolio + '-DEMO01' }];
+    var invitados = {};
+    for (var i = 0; i < muestra.length; i++) invitados[await RF.claveDeCorreo(muestra[i].correo)] = muestra[i];
+    var estado = function () { return RF.leer('rf27_demo') || { confirmaciones: {}, espera: {} }; };
+    var pausa = function () { return new Promise(function (r) { setTimeout(r, 450); }); };
+    return {
+      buscar: async function (clave) {
+        await pausa();
+        var s = estado();
+        return { invitado: invitados[clave] || null, confirmadoEn: s.confirmaciones[clave] || null, espera: (s.espera[clave] && s.espera[clave].estado) || null };
+      },
+      confirmar: async function (clave) {
+        await pausa();
+        var s = estado(); s.confirmaciones[clave] = Date.now(); RF.guardar('rf27_demo', s);
+        return s.confirmaciones[clave];
+      },
+      pedirLugar: async function (clave, datos) {
+        await pausa();
+        var s = estado(); s.espera[clave] = Object.assign({}, datos, { en: Date.now(), estado: 'pendiente' }); RF.guardar('rf27_demo', s);
+      },
+      listo: function () {}
+    };
+  }
+
+  async function fuenteFirebase() {
+    var fb = await RF.firebase(false), db = fb.db, d = fb.d;
+    var valor = async function (ruta) { return (await RF.conTiempo(d.get(d.ref(db, ruta)))).val(); };
+    return {
+      buscar: async function (clave) {
+        d.goOnline(db);
+        var r = await Promise.all([valor('invitados/' + clave), valor('confirmaciones/' + clave)]);
+        var espera = r[0] ? null : await valor('espera/' + clave + '/estado');
+        return { invitado: r[0], confirmadoEn: r[1], espera: espera };
+      },
+      confirmar: async function (clave) {
+        d.goOnline(db);
+        try {
+          await RF.conTiempo(d.set(d.ref(db, 'confirmaciones/' + clave), d.serverTimestamp()));
+        } catch (e) {
+          var ya = await valor('confirmaciones/' + clave).catch(function () { return null; });
+          if (ya) return ya;
+          throw e;
+        }
+        return (await valor('confirmaciones/' + clave)) || Date.now();
+      },
+      pedirLugar: async function (clave, datos) {
+        d.goOnline(db);
+        await RF.conTiempo(d.set(d.ref(db, 'espera/' + clave), Object.assign({}, datos, { en: d.serverTimestamp(), estado: 'pendiente' })));
+      },
+      /* Cerramos la conexión al terminar: el pase ya quedó en el teléfono
+         y así no ocupamos lugares del plan gratuito de Firebase. */
+      listo: function () { d.goOffline(db); }
+    };
+  }
+
+  /* ---------- utilidades de pantalla ---------- */
+  function montar() { panel.replaceChildren.apply(panel, arguments); }
+  function foco(n) { if (n) { n.setAttribute('tabindex', '-1'); n.focus(); } }
+  function ocupado(boton, si, texto) { boton.disabled = si; if (texto) boton.textContent = texto; }
+  function mostrarError(input, nodo, texto) {
+    nodo.textContent = texto; nodo.hidden = false;
+    if (input) { input.setAttribute('aria-invalid', 'true'); input.setAttribute('aria-describedby', nodo.id); }
+  }
+  function avisoPrivacidad() {
+    return el('p', { class: 'letra-chica' }, 'Usamos tu correo solo para el registro de este evento.',
+      E.avisoPrivacidad ? [' ', el('a', { href: E.avisoPrivacidad, target: '_blank', rel: 'noopener' }, 'Aviso de privacidad')] : null);
+  }
+  var temporizadorAviso = null;
+  function avisar(texto) {
+    var viejo = document.querySelector('.aviso-flotante'); if (viejo) viejo.remove();
+    var n = el('p', { class: 'aviso-flotante', role: 'status' }, texto);
+    document.body.append(n);
+    clearTimeout(temporizadorAviso);
+    temporizadorAviso = setTimeout(function () { n.remove(); }, 4500);
+  }
+  function bajar(blob, nombre) {
+    if (enMarco && RF.demo) { avisar('En esta vista previa no se descargan archivos; en la página publicada, sí.'); return; }
+    RF.bajarArchivo(blob, nombre);
+  }
+
+  /* ---------- 1. pedir correo ---------- */
+  function pintarCorreo(previo, mensaje) {
+    var input = el('input', { id: 'correo', name: 'correo', type: 'email', inputmode: 'email', autocomplete: 'email', autocapitalize: 'off', spellcheck: 'false', placeholder: 'nombre@empresa.com', required: true, value: previo || '' });
+    var error = el('p', { class: 'error', id: 'errorCorreo', role: 'alert', hidden: true });
+    var boton = el('button', { class: 'boton', type: 'submit' }, 'Ver mi pase');
+    var form = el('form', { class: 'formulario', novalidate: true }, el('label', { for: 'correo' }, 'Correo electrónico'), input, error, boton);
+    form.addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      var correo = RF.normalizarCorreo(input.value);
+      if (!RF.correoValido(correo)) { mostrarError(input, error, 'Escribe un correo válido, por ejemplo nombre@empresa.com.'); input.focus(); return; }
+      ocupado(boton, true, 'Buscando…');
+      try {
+        var f = await obtenerFuente();
+        var clave = await RF.claveDeCorreo(correo);
+        var r = await f.buscar(clave);
+        if (r.invitado) {
+          var reg = { clave: clave, correo: correo, nombre: r.invitado.nombre, empresa: r.invitado.empresa || '', folio: r.invitado.folio, confirmadoEn: r.confirmadoEn || null };
+          if (reg.confirmadoEn) { RF.guardar(LLAVE, reg); f.listo(); pintarPase(reg, false, true); }
+          else pintarConfirmar(reg);
+        } else if (r.espera) {
+          f.listo(); pintarEspera(correo, r.espera);
+        } else {
+          pintarNoEncontrado(correo, clave);
+        }
+      } catch (e) {
+        console.error(e);
+        ocupado(boton, false, 'Ver mi pase');
+        mostrarError(input, error, RF.mensajeError(e));
+      }
+    });
+    if (mensaje) mostrarError(input, error, mensaje);
+    montar(el('div', { class: 'tarjeta' },
+      el('h2', { class: 'tarjeta-titulo' }, 'Confirma tu asistencia'),
+      el('p', { class: 'tarjeta-texto' }, 'Escribe el correo en el que recibiste la invitación y te mostramos tu pase de acceso.'),
+      form, avisoPrivacidad()));
+    return input;
+  }
+
+  /* ---------- 2. confirmar ---------- */
+  function pintarConfirmar(reg) {
+    var boton = el('button', { class: 'boton', type: 'button' }, 'Confirmar mi asistencia');
+    var error = el('p', { class: 'error', id: 'errorConfirmar', role: 'alert', hidden: true });
+    var h2 = el('h2', { class: 'tarjeta-titulo' }, 'Hola, ' + RF.saludo(reg.nombre));
+    boton.addEventListener('click', async function () {
+      ocupado(boton, true, 'Confirmando…'); error.hidden = true;
+      try {
+        var f = await obtenerFuente();
+        reg.confirmadoEn = await f.confirmar(reg.clave);
+        RF.guardar(LLAVE, reg); f.listo();
+        pintarPase(reg, true, true);
+      } catch (e) {
+        console.error(e);
+        ocupado(boton, false, 'Confirmar mi asistencia');
+        mostrarError(null, error, RF.mensajeError(e));
+      }
+    });
+    montar(el('div', { class: 'tarjeta' }, h2,
+      reg.empresa ? el('p', { class: 'tarjeta-empresa' }, reg.empresa) : null,
+      el('p', { class: 'tarjeta-texto' }, 'Confirma que nos acompañarás el ' + RF.fechaLarga(RF.inicio).toLowerCase() + ' a las ' + RF.hhmm(RF.inicio) + ' h en ' + E.lugar + '.'),
+      error, boton,
+      el('button', { class: 'boton-texto', type: 'button', onclick: function () { pintarCorreo(''); } }, 'No soy yo, usar otro correo')));
+    foco(h2);
+  }
+
+  /* ---------- 3. pase con QR ---------- */
+  function pintarPase(reg, recien, enfocar) {
+    var qr = el('div', { class: 'qr', role: 'img', 'aria-label': 'Código QR del pase, folio ' + reg.folio });
+    qr.innerHTML = RF.qrSvg(reg.folio);
+    var h2 = el('h2', { class: 'saludo' }, 'Hola, ' + RF.saludo(reg.nombre));
+    var partes = [
+      el('div', {}, h2, el('p', { class: 'saludo-sub' }, 'Tu asistencia está confirmada.')),
+      el('article', { class: 'tarjeta pase', 'aria-label': 'Pase de acceso' },
+        el('p', { class: 'pase-evento' }, E.nombre),
+        qr,
+        el('div', { class: 'pase-folio' }, el('span', {}, 'Folio ' + reg.folio), el('span', { class: 'sello' + (recien ? ' nuevo' : '') }, 'Confirmado')),
+        el('div', { class: 'perforado', 'aria-hidden': 'true' }),
+        el('div', { class: 'pase-datos' },
+          el('p', { class: 'pase-nombre' }, reg.nombre),
+          reg.empresa ? el('p', { class: 'pase-empresa' }, reg.empresa) : null,
+          el('p', {}, RF.fechaLarga(RF.inicio)),
+          el('p', {}, RF.horario()),
+          el('p', {}, E.lugar))),
+      el('p', { class: 'nota' }, 'Muestra este código en la recepción del evento. Si descargas el pase, lo tendrás aunque no haya señal.'),
+      el('button', { class: 'boton boton-oro', type: 'button', onclick: function () { agregarCalendario(reg); } }, 'Agregar a mi calendario'),
+      el('div', { class: 'par' },
+        el('button', { class: 'boton boton-linea', type: 'button', onclick: function () { descargarPase(reg); } }, 'Descargar pase'),
+        el('a', { class: 'boton boton-linea', href: E.mapa, target: '_blank', rel: 'noopener' }, 'Cómo llegar'))
+    ];
+    if (E.contacto) {
+      partes.push(el('p', { class: 'nota' }, '¿Ya no podrás asistir? ',
+        el('a', { href: 'mailto:' + E.contacto + '?subject=' + encodeURIComponent('No podré asistir a ' + E.nombre + ' (' + reg.folio + ')') }, 'Avísanos'),
+        ' para liberar tu lugar.'));
+    }
+    partes.push(el('button', { class: 'boton-texto', type: 'button', onclick: function () { RF.borrar(LLAVE); foco(pintarCorreo('')); } }, 'Usar otro correo'));
+    montar.apply(null, partes);
+    if (enfocar) foco(h2);
+  }
+
+  /* ---------- 4. no está en la lista: lista de espera ---------- */
+  function pintarNoEncontrado(correo, clave) {
+    var nombre = el('input', { id: 'nombre', name: 'nombre', type: 'text', autocomplete: 'name', maxlength: '150', required: true });
+    var empresa = el('input', { id: 'empresa', name: 'empresa', type: 'text', autocomplete: 'organization', maxlength: '200' });
+    var error = el('p', { class: 'error', id: 'errorEspera', role: 'alert', hidden: true });
+    var boton = el('button', { class: 'boton', type: 'submit' }, 'Pedir un lugar');
+    var h2 = el('h2', { class: 'tarjeta-titulo' }, 'Este correo no está en la lista');
+    var form = el('form', { class: 'formulario', novalidate: true },
+      el('label', { for: 'nombre' }, 'Nombre completo'), nombre,
+      el('label', { for: 'empresa' }, 'Empresa'), empresa, error, boton);
+    form.addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      var n = nombre.value.trim().replace(/\s+/g, ' '), em = empresa.value.trim().replace(/\s+/g, ' ');
+      if (n.length < 2) { mostrarError(nombre, error, 'Escribe tu nombre completo.'); nombre.focus(); return; }
+      ocupado(boton, true, 'Enviando…');
+      try {
+        var f = await obtenerFuente();
+        await f.pedirLugar(clave, { nombre: n.slice(0, 150), empresa: em.slice(0, 200), correo: correo });
+        f.listo();
+        pintarEspera(correo, 'pendiente');
+      } catch (e) {
+        console.error(e);
+        ocupado(boton, false, 'Pedir un lugar');
+        mostrarError(nombre, error, RF.mensajeError(e));
+      }
+    });
+    montar(el('div', { class: 'tarjeta' }, h2,
+      el('p', { class: 'tarjeta-texto' }, 'No encontramos ', el('strong', {}, correo), ' entre los invitados. Revisa que sea el correo en el que recibiste la invitación.'),
+      el('p', { class: 'tarjeta-texto' }, 'Si no estás en la lista, pide un lugar y te escribiremos a ese correo si se libera uno.'),
+      form,
+      el('button', { class: 'boton-texto', type: 'button', onclick: function () { foco(pintarCorreo(correo)); } }, 'Probar con otro correo'),
+      avisoPrivacidad()));
+    foco(h2);
+  }
+
+  function pintarEspera(correo, estado) {
+    var descartado = estado === 'descartado';
+    var h2 = el('h2', { class: 'tarjeta-titulo' }, descartado ? 'Se agotaron los lugares' : 'Estás en la lista de espera');
+    montar(el('div', { class: 'tarjeta' }, h2,
+      descartado
+        ? el('p', { class: 'tarjeta-texto' }, 'Gracias por tu interés. Esta vez se llenó el cupo; te esperamos en la próxima edición.')
+        : el('p', { class: 'tarjeta-texto' }, 'Si se libera un lugar, te escribiremos a ', el('strong', {}, correo), '. Con ese mismo correo podrás sacar tu pase en esta página.'),
+      el('button', { class: 'boton-texto', type: 'button', onclick: function () { foco(pintarCorreo('')); } }, 'Usar otro correo')));
+    foco(h2);
+  }
+
+  function pintarCerrado() {
+    montar(el('div', { class: 'tarjeta' },
+      el('h2', { class: 'tarjeta-titulo' }, 'El registro ya cerró'),
+      el('p', { class: 'tarjeta-texto' }, 'Gracias por acompañarnos en ' + E.nombre + '.')));
+  }
+
+  /* ---------- calendario ---------- */
+  function agregarCalendario(reg) {
+    var t = function (d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); };
+    var detalles = 'Conferencia para clientes y amigos de Ruvalcaba Villalobos Consultores Fiscales. Folio de tu pase: ' + reg.folio + '. Presenta tu código QR en la recepción.';
+    if (/android/i.test(navigator.userAgent)) {
+      window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(E.nombre) +
+        '&dates=' + t(RF.inicio) + '/' + t(RF.fin) + '&location=' + encodeURIComponent(E.lugar) + '&details=' + encodeURIComponent(detalles), '_blank', 'noopener');
+      return;
+    }
+    var esc = function (s) { return String(s).replace(/[\\;,]/g, function (m) { return '\\' + m; }).replace(/\n/g, '\\n'); };
+    var doblar = function (linea) { var out = []; while (linea.length > 70) { out.push(linea.slice(0, 70)); linea = ' ' + linea.slice(70); } out.push(linea); return out.join('\r\n'); };
+    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Ruvalcaba Villalobos//Reformas Fiscales 2027//ES', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+      'BEGIN:VEVENT', 'UID:' + reg.folio + '@reformas-fiscales-2027', 'DTSTAMP:' + t(new Date()), 'DTSTART:' + t(RF.inicio), 'DTEND:' + t(RF.fin),
+      'SUMMARY:' + esc(E.nombre), 'LOCATION:' + esc(E.lugar), 'DESCRIPTION:' + esc(detalles),
+      'BEGIN:VALARM', 'TRIGGER:-PT2H', 'ACTION:DISPLAY', 'DESCRIPTION:' + esc(E.nombre), 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'].map(doblar).join('\r\n');
+    bajar(new Blob([ics], { type: 'text/calendar;charset=utf-8' }), 'Reformas_Fiscales_2027.ics');
+  }
+
+  /* ---------- pase descargable (imagen para la galería) ---------- */
+  function cargarImagen(src) {
+    return new Promise(function (ok, no) { var i = new Image(); i.onload = function () { ok(i); }; i.onerror = no; i.src = src; });
+  }
+  function escribir(g, texto, x, y, ancho, alto) {
+    var palabras = String(texto).split(/\s+/), linea = '';
+    for (var i = 0; i < palabras.length; i++) {
+      var prueba = linea ? linea + ' ' + palabras[i] : palabras[i];
+      if (g.measureText(prueba).width > ancho && linea) { g.fillText(linea, x, y); y += alto; linea = palabras[i]; }
+      else linea = prueba;
+    }
+    if (linea) { g.fillText(linea, x, y); y += alto; }
+    return y;
+  }
+  async function descargarPase(reg) {
+    try { await Promise.all([document.fonts.load('500 90px "Bodoni Moda"'), document.fonts.load('600 40px "Cabin"'), document.fonts.load('400 32px "Cabin"')]); } catch (e) { /* usa fuentes del sistema */ }
+    var W = 1080, H = 1920, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+    var g = cv.getContext('2d');
+    g.fillStyle = '#1E2A44'; g.fillRect(0, 0, W, H);
+    var logo = await cargarImagen($('.logo').src).catch(function () { return null; });
+    if (logo) g.drawImage(logo, 96, 110, 118, 161);
+    g.fillStyle = '#F2EDE1'; g.font = '500 92px "Bodoni Moda", Didot, serif'; g.fillText('Reformas Fiscales', 96, 400);
+    g.fillStyle = '#C1A55C'; g.font = '500 150px "Bodoni Moda", Didot, serif'; g.fillText('2027', 90, 545);
+    var x = 96, y = 610, w = W - 192, h = 1150;
+    g.fillStyle = '#F2EDE1'; g.beginPath();
+    if (g.roundRect) g.roundRect(x, y, w, h, 36); else g.rect(x, y, w, h);
+    g.fill();
+    var lado = 600, qx = (W - lado) / 2, qy = y + 60;
+    RF.qrEnLienzo(g, reg.folio, qx, qy, lado, '#1E2A44');
+    g.fillStyle = '#4A5470'; g.font = '400 32px "Cabin", sans-serif'; g.textAlign = 'center';
+    g.fillText('Folio ' + reg.folio, W / 2, qy + lado + 56); g.textAlign = 'left';
+    var linea = qy + lado + 100;
+    g.setLineDash([14, 12]); g.strokeStyle = 'rgba(30,42,68,.25)'; g.lineWidth = 3;
+    g.beginPath(); g.moveTo(x + 40, linea); g.lineTo(x + w - 40, linea); g.stroke(); g.setLineDash([]);
+    g.fillStyle = '#1E2A44'; g.beginPath(); g.arc(x, linea, 24, 0, Math.PI * 2); g.arc(x + w, linea, 24, 0, Math.PI * 2); g.fill();
+    var ty = linea + 76;
+    g.fillStyle = '#1E2A44'; g.font = '600 40px "Cabin", sans-serif'; ty = escribir(g, reg.nombre, x + 56, ty, w - 112, 50);
+    if (reg.empresa) { g.fillStyle = '#4A5470'; g.font = '400 32px "Cabin", sans-serif'; ty = escribir(g, reg.empresa, x + 56, ty + 4, w - 112, 42); }
+    g.fillStyle = '#1E2A44'; g.font = '400 32px "Cabin", sans-serif'; ty += 26;
+    [RF.fechaLarga(RF.inicio), RF.horario(), E.lugar].forEach(function (t) { g.fillText(t, x + 56, ty); ty += 46; });
+    g.fillStyle = '#C9C5BA'; g.font = '400 30px "Cabin", sans-serif'; g.textAlign = 'center';
+    g.fillText('Muestra este código en la recepción del evento.', W / 2, y + h + 90);
+    cv.toBlob(function (b) { if (b) bajar(b, 'Pase_' + reg.folio + '.png'); }, 'image/png');
+  }
+
+  /* ---------- arranque ---------- */
+  tic();
+  setInterval(tic, 1000);
+  if (RF.etapa() === 'despues') {
+    pintarCerrado();
+  } else {
+    var guardado = RF.leer(LLAVE);
+    if (guardado && guardado.folio) {
+      pintarPase(guardado, false, false);
+      if (RF.inicio - Date.now() < 86400000) setTimeout(function () { panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 700);
+    } else {
+      pintarCorreo('');
+    }
+  }
+  if ('serviceWorker' in navigator && location.protocol === 'https:' && !enMarco) {
+    navigator.serviceWorker.register('sw.js').catch(function () { /* sin modo sin conexión */ });
+  }
+})();
+</script>
+</body>
+</html>

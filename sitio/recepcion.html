@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1E2A44">
+<title>Recepción | Reformas Fiscales 2027</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Cabin:wght@400..700&display=swap">
+<style>
+:root{
+  --marino:#1E2A44;--hondo:#10182B;--oro:#C1A55C;--oro-claro:#D9C184;--marfil:#F2EDE1;--texto-2:#C9C5BA;
+  --verde:#0B6B6A;--ambar:#F0A03C;--rojo:#9B1C1C;--tinta:#3E4863;--tinta-2:#4A5470;
+  --display:'Bodoni Moda','Bodoni 72',Didot,'Times New Roman',serif;
+  --texto:'Cabin','Gill Sans','Segoe UI',system-ui,sans-serif;
+  color-scheme:dark;box-sizing:border-box;background:var(--marino);
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--marino);color:var(--marfil);font-family:var(--texto);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+p,h1,h2{margin:0}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px}
+.app{max-width:560px;margin:0 auto;padding:20px 20px 48px}
+.aviso-demo{margin:-20px -20px 16px;padding:10px 20px;background:var(--oro);color:var(--marino);font-size:14px;line-height:1.4;text-align:center}
+.cargando{padding:80px 0;text-align:center;color:var(--texto-2)}
+.centrada{padding-top:8vh}
+.tarjeta{padding:24px 20px;border-radius:16px;background:var(--marfil);color:var(--marino)}
+.tarjeta-titulo{font-family:var(--display);font-weight:500;font-size:28px;line-height:1.15}
+.tarjeta-texto{margin-top:10px;font-size:15px;line-height:1.5;color:var(--tinta)}
+.formulario{margin-top:18px;display:flex;flex-direction:column}
+.formulario label,.buscador label{margin-top:14px;font-size:14px;font-weight:600;line-height:1.3}
+.formulario label:first-child{margin-top:0}
+input{width:100%;height:52px;margin-top:8px;padding:0 14px;border:1.5px solid #7C849A;border-radius:10px;background:#fff;color:var(--marino);font:inherit;font-size:17px}
+.error{margin-top:8px;font-size:14px;line-height:1.4;color:var(--rojo)}
+.codigo{margin-top:12px;padding:12px;border-radius:8px;background:#fff;font-size:14px;word-break:break-all;color:var(--marino)}
+.boton{appearance:none;display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:16px;padding:0 18px;border:0;border-radius:10px;background:var(--marino);color:var(--marfil);font:inherit;font-size:17px;font-weight:600;cursor:pointer}
+.boton[disabled]{opacity:.65}
+.boton-oro{background:var(--oro);color:var(--marino)}
+.boton-chico{width:auto;min-height:44px;margin-top:0;padding:0 14px;font-size:15px;background:var(--oro);color:var(--marino)}
+.boton-texto{appearance:none;display:block;margin:6px auto 0;padding:12px 8px;border:0;background:none;color:inherit;font:inherit;font-size:15px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.barra{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.barra h1{font-family:var(--display);font-weight:500;font-size:30px;line-height:1.15}
+.sub{font-size:14px;line-height:1.4;color:var(--texto-2)}
+.barra .boton-texto{margin:0;padding:10px 0 10px 8px;color:var(--oro)}
+.sin-red{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--ambar);color:var(--marino);font-size:14px;line-height:1.4;font-weight:600}
+.cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px;padding:12px 0;border-top:1px solid rgba(193,165,92,.55);border-bottom:1px solid rgba(193,165,92,.55)}
+.cifras div{display:flex;flex-direction:column;gap:2px;padding:0 10px}
+.cifras div+div{border-left:1px solid rgba(242,237,225,.14)}
+.cifras b{font-family:var(--display);font-weight:500;font-size:32px;line-height:1.1;color:var(--oro);font-variant-numeric:tabular-nums}
+.cifras span{font-size:13px;color:var(--texto-2)}
+.visor{position:relative;margin-top:18px;aspect-ratio:1/1;max-height:62vh;width:100%;border-radius:16px;background:var(--hondo);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.visor video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+.visor.activo video{opacity:1}
+.esquina{position:absolute;z-index:1;width:44px;height:44px;border:0 solid var(--oro)}
+.e1{left:26px;top:26px;border-top-width:3px;border-left-width:3px;border-top-left-radius:8px}
+.e2{right:26px;top:26px;border-top-width:3px;border-right-width:3px;border-top-right-radius:8px}
+.e3{left:26px;bottom:26px;border-bottom-width:3px;border-left-width:3px;border-bottom-left-radius:8px}
+.e4{right:26px;bottom:26px;border-bottom-width:3px;border-right-width:3px;border-bottom-right-radius:8px}
+.visor-texto{position:relative;z-index:1;max-width:230px;font-size:15px;line-height:1.45;text-align:center;color:#DAD6CB}
+.visor.activo .visor-texto{display:none}
+.resultado{display:flex;align-items:flex-start;gap:14px;margin-top:16px;padding:16px;border-radius:14px}
+.resultado svg{flex-shrink:0;width:30px;height:30px}
+.resultado.ok{background:var(--verde);color:var(--marfil)}
+.resultado.duplicado{background:var(--ambar);color:var(--marino)}
+.resultado.desconocido,.resultado.error{background:var(--rojo);color:var(--marfil)}
+.r-titulo{font-weight:700;font-size:18px;line-height:1.3}
+.r-texto{margin-top:2px;font-size:16px;line-height:1.4}
+.r-nota{margin-top:4px;font-size:14px;line-height:1.4;opacity:.9}
+.buscador{margin-top:26px;display:flex;flex-direction:column}
+.buscador label{margin-top:0}
+.lista{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column}
+.fila{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(242,237,225,.12)}
+.fila-datos{display:flex;flex-direction:column;min-width:0}
+.fila-datos strong{font-weight:600;font-size:16px;line-height:1.35}
+.fila-datos span{font-size:14px;line-height:1.35;color:var(--texto-2);overflow-wrap:anywhere}
+.fila-datos .sin-confirmar{color:var(--ambar)}
+.estado-entro{flex-shrink:0;font-size:14px;color:var(--texto-2);white-space:nowrap}
+.vacio{padding:12px 0;font-size:15px;color:var(--texto-2)}
+.ultimos{margin-top:28px}
+.ultimos h2{font-family:var(--display);font-weight:500;font-size:22px}
+.usuario{margin-top:28px;font-size:13px;color:var(--texto-2);text-align:center}
+.error-general{margin-top:24px;padding:16px;border-radius:12px;background:var(--rojo);color:var(--marfil)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <p class="aviso-demo" id="avisoDemo" hidden>Modo de prueba con datos de ejemplo. Escanea el pase de prueba (folio RF27-DEMO01) o búscalo por nombre. No se guarda nada.</p>
+
+  <section class="vista" id="vCargando"><p class="cargando">Cargando…</p></section>
+
+  <section class="vista centrada" id="vLogin" hidden>
+    <div class="tarjeta">
+      <h1 class="tarjeta-titulo">Recepción</h1>
+      <p class="tarjeta-texto">Reformas Fiscales 2027. Entra con la cuenta que te dio el administrador.</p>
+      <form class="formulario" id="formLogin" novalidate>
+        <label for="lCorreo">Correo</label>
+        <input id="lCorreo" type="email" autocomplete="username" autocapitalize="off" spellcheck="false" required>
+        <label for="lClave">Contraseña</label>
+        <input id="lClave" type="password" autocomplete="current-password" required>
+        <p class="error" id="lError" role="alert" hidden></p>
+        <button class="boton" type="submit">Entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="vista centrada" id="vSinPermiso" hidden>
+    <div class="tarjeta">
+      <h1 class="tarjeta-titulo">Esta cuenta aún no tiene acceso</h1>
+      <p class="tarjeta-texto"><span id="correoSinPermiso"></span> inició sesión, pero no está autorizada para la recepción. Pídele al administrador que dé de alta este código en Firebase:</p>
+      <p class="codigo" id="uid"></p>
+      <button class="boton" id="copiarUid" type="button">Copiar código</button>
+      <button class="boton-texto" id="salir2" type="button">Salir</button>
+    </div>
+  </section>
+
+  <section class="vista" id="vPrincipal" hidden>
+    <header class="barra">
+      <div>
+        <h1>Recepción</h1>
+        <p class="sub">Reformas Fiscales 2027</p>
+      </div>
+      <button class="boton-texto" id="salir" type="button">Salir</button>
+    </header>
+    <p class="sin-red" id="sinRed" role="status" hidden>Sin conexión. Las entradas se guardan en este teléfono y se envían al volver la señal. No recargues la página.</p>
+    <div class="cifras" aria-label="Resumen">
+      <div><b id="nAsist">0</b><span>asistentes</span></div>
+      <div><b id="nConf">0</b><span>confirmados</span></div>
+      <div><b id="nInv">0</b><span>invitados</span></div>
+    </div>
+    <div class="visor" id="visor">
+      <video id="video" playsinline muted autoplay></video>
+      <div class="esquina e1"></div><div class="esquina e2"></div><div class="esquina e3"></div><div class="esquina e4"></div>
+      <p class="visor-texto">Toca Iniciar cámara y apunta al código QR del invitado</p>
+    </div>
+    <button class="boton boton-oro" id="camara" type="button">Iniciar cámara</button>
+    <div class="resultado" id="resultado" role="status" aria-live="assertive" hidden></div>
+
+    <section class="buscador">
+      <label for="buscar">Buscar invitado</label>
+      <input id="buscar" type="search" placeholder="Nombre, empresa o folio" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <ul class="lista" id="lista"></ul>
+    </section>
+
+    <section class="ultimos">
+      <h2>Últimas entradas</h2>
+      <ul class="lista" id="ultimos"></ul>
+    </section>
+    <p class="usuario" id="usuario"></p>
+  </section>
+
+  <p class="error-general" id="errorGeneral" role="alert" hidden></p>
+</div>
+
+<script src="config.js"></script>
+<script src="comun.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script>
+(function () {
+  'use strict';
+  var el = RF.el;
+  var $ = function (s) { return document.querySelector(s); };
+  var vistas = ['vCargando', 'vLogin', 'vSinPermiso', 'vPrincipal'];
+  function mostrar(id) { vistas.forEach(function (v) { $('#' + v).hidden = v !== id; }); }
+
+  var invitados = {}, confirmaciones = {}, asistencias = {}, indice = {}, porFolio = new Map();
+  var fuente = null, enProceso = new Set();
+
+  /* ---------- datos ---------- */
+  function indexar() {
+    porFolio = new Map(); indice = {};
+    Object.keys(invitados).forEach(function (k) {
+      var v = invitados[k] || {};
+      if (v.folio) porFolio.set(String(v.folio).toUpperCase(), k);
+      indice[k] = RF.sinAcentos([v.nombre, v.empresa, v.correo, v.folio].join(' '));
+    });
+  }
+  function cuenta(o) { return Object.keys(o).length; }
+  function refrescar() {
+    $('#nAsist').textContent = cuenta(asistencias);
+    $('#nConf').textContent = cuenta(confirmaciones);
+    $('#nInv').textContent = cuenta(invitados);
+    pintarBusqueda();
+    pintarUltimos();
+  }
+  function nombreYEmpresa(v) { return v.empresa ? v.nombre + ', ' + v.empresa : v.nombre; }
+
+  /* ---------- resultado grande ---------- */
+  var ICONOS = {
+    ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16.2 9.5"/></svg>',
+    duplicado: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    desconocido: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>',
+    error: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>'
+  };
+  function resultado(tipo, titulo, texto, nota) {
+    var r = $('#resultado'), icono = el('span');
+    icono.innerHTML = ICONOS[tipo];
+    r.className = 'resultado ' + tipo;
+    r.replaceChildren(icono.firstChild, el('div', {},
+      el('p', { class: 'r-titulo' }, titulo),
+      texto ? el('p', { class: 'r-texto' }, texto) : null,
+      nota ? el('p', { class: 'r-nota' }, nota) : null));
+    r.hidden = false;
+  }
+  function vibrar(p) { if (navigator.vibrate) { try { navigator.vibrate(p); } catch (e) { /* sin vibración */ } } }
+
+  /* ---------- registrar una entrada (una sola vez por pase) ---------- */
+  async function registrar(clave) {
+    var inv = invitados[clave];
+    if (!inv) { vibrar([200]); return resultado('desconocido', 'Código no reconocido', 'Este pase no está en la lista. Busca al invitado por nombre.'); }
+    var previo = asistencias[clave];
+    if (previo || enProceso.has(clave)) {
+      vibrar([90, 60, 90]);
+      return resultado('duplicado', 'Este pase ya había entrado', inv.nombre + (previo && previo.en ? ' entró a las ' + RF.hora(previo.en) + '.' : '.'));
+    }
+    enProceso.add(clave);
+    resultado('ok', 'Acceso registrado', nombreYEmpresa(inv), confirmaciones[clave] ? '' : 'No había confirmado su asistencia.');
+    vibrar([70]);
+    try {
+      await fuente.registrar(clave);
+    } catch (e) {
+      console.error(e);
+      if (/permission|denied/i.test(String(e.code || e.message))) resultado('duplicado', 'Este pase ya había entrado', inv.nombre + ' ya estaba registrado desde otro teléfono.');
+      else resultado('error', 'No se guardó la entrada', RF.mensajeError(e));
+    } finally {
+      enProceso.delete(clave);
+    }
+  }
+
+  /* ---------- búsqueda por nombre ---------- */
+  function filaInvitado(k) {
+    var v = invitados[k], a = asistencias[k];
+    var accion = a
+      ? el('span', { class: 'estado-entro' }, 'Entró ' + RF.hora(a.en))
+      : el('button', { class: 'boton boton-chico', type: 'button', onclick: function () { registrar(k); } }, 'Registrar entrada');
+    return el('li', { class: 'fila' },
+      el('div', { class: 'fila-datos' },
+        el('strong', {}, v.nombre),
+        el('span', {}, [v.empresa, v.folio].filter(Boolean).join(', ')),
+        confirmaciones[k] ? null : el('span', { class: 'sin-confirmar' }, 'Sin confirmar')),
+      accion);
+  }
+  function pintarBusqueda() {
+    var q = RF.sinAcentos($('#buscar').value.trim()), lista = $('#lista');
+    if (q.length < 2) { lista.replaceChildren(); return; }
+    var res = Object.keys(invitados).filter(function (k) { return indice[k] && indice[k].indexOf(q) >= 0; })
+      .sort(function (a, b) { return String(invitados[a].nombre).localeCompare(String(invitados[b].nombre), 'es'); }).slice(0, 30);
+    lista.replaceChildren.apply(lista, res.length ? res.map(filaInvitado) : [el('li', { class: 'vacio' }, 'Sin resultados. Prueba con el apellido o la empresa.')]);
+  }
+  function pintarUltimos() {
+    var ks = Object.keys(asistencias).filter(function (k) { return invitados[k]; })
+      .sort(function (a, b) { return (asistencias[b].en || 0) - (asistencias[a].en || 0); }).slice(0, 6);
+    var ul = $('#ultimos');
+    ul.replaceChildren.apply(ul, ks.length ? ks.map(function (k) {
+      return el('li', { class: 'fila' },
+        el('div', { class: 'fila-datos' }, el('strong', {}, invitados[k].nombre), el('span', {}, invitados[k].empresa || '')),
+        el('span', { class: 'estado-entro' }, RF.hora(asistencias[k].en)));
+    }) : [el('li', { class: 'vacio' }, 'Aún no hay entradas registradas.')]);
+  }
+  $('#buscar').addEventListener('input', pintarBusqueda);
+
+  /* ---------- cámara ---------- */
+  var video = $('#video'), lienzo = document.createElement('canvas');
+  var ctx = lienzo.getContext('2d', { willReadFrequently: true });
+  var flujo = null, detector = null, detectando = false, ultimoCuadro = 0, pausaHasta = 0, ultimoTexto = '', ultimoEn = 0;
+
+  async function iniciarCamara() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      return resultado('error', 'Este navegador no permite usar la cámara', 'Abre la página en Chrome o Safari actualizados. Mientras, busca a los invitados por nombre.');
+    }
+    try {
+      flujo = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false });
+    } catch (e) {
+      flujo = null;
+      return resultado('error', 'No se pudo abrir la cámara', e && e.name === 'NotAllowedError'
+        ? 'Da permiso de cámara a esta página en el navegador y vuelve a intentar.'
+        : 'Revisa que ninguna otra app esté usando la cámara.');
+    }
+    video.srcObject = flujo;
+    try { await video.play(); } catch (e) { /* algunos navegadores ya reproducen solos */ }
+    detector = null;
+    if ('BarcodeDetector' in window) {
+      try {
+        var formatos = await window.BarcodeDetector.getSupportedFormats();
+        if (formatos.indexOf('qr_code') >= 0) detector = new window.BarcodeDetector({ formats: ['qr_code'] });
+      } catch (e) { detector = null; }
+    }
+    if (!detector && typeof window.jsQR !== 'function') {
+      detenerCamara();
+      return resultado('error', 'No se cargó el lector de códigos', 'Revisa tu conexión y recarga la página.');
+    }
+    $('#visor').classList.add('activo');
+    $('#camara').textContent = 'Detener cámara';
+    requestAnimationFrame(cuadro);
+  }
+  function detenerCamara() {
+    if (flujo) flujo.getTracks().forEach(function (t) { t.stop(); });
+    flujo = null;
+    video.srcObject = null;
+    $('#visor').classList.remove('activo');
+    $('#camara').textContent = 'Iniciar cámara';
+  }
+  function cuadro(t) {
+    if (!flujo) return;
+    requestAnimationFrame(cuadro);
+    if (t - ultimoCuadro < 120 || Date.now() < pausaHasta || video.readyState < 2 || !video.videoWidth) return;
+    ultimoCuadro = t;
+    if (detector) {
+      if (detectando) return;
+      detectando = true;
+      detector.detect(video).then(function (c) { if (c && c[0]) leido(c[0].rawValue); })
+        .catch(function () { /* cuadro ilegible */ })
+        .finally(function () { detectando = false; });
+    } else {
+      var w = 640, h = Math.round(video.videoHeight * w / video.videoWidth);
+      if (lienzo.width !== w || lienzo.height !== h) { lienzo.width = w; lienzo.height = h; }
+      ctx.drawImage(video, 0, 0, w, h);
+      var codigo = window.jsQR(ctx.getImageData(0, 0, w, h).data, w, h, { inversionAttempts: 'dontInvert' });
+      if (codigo && codigo.data) leido(codigo.data);
+    }
+  }
+  function leido(texto) {
+    var t = String(texto || '').trim().toUpperCase();
+    if (!t || (t === ultimoTexto && Date.now() - ultimoEn < 4000)) return;
+    ultimoTexto = t; ultimoEn = Date.now(); pausaHasta = Date.now() + 1500;
+    var clave = porFolio.get(t);
+    if (!clave) { vibrar([200]); return resultado('desconocido', 'Código no reconocido', 'Este QR no es un pase de ' + RF.evento.nombre + '. Busca al invitado por nombre.'); }
+    registrar(clave);
+  }
+  $('#camara').addEventListener('click', function () { if (flujo) detenerCamara(); else iniciarCamara(); });
+  document.addEventListener('visibilitychange', function () { if (document.hidden) detenerCamara(); });
+
+  /* ---------- modo de prueba ---------- */
+  async function iniciarDemo() {
+    $('#avisoDemo').hidden = false;
+    var muestra = [
+      { correo: 'invitado@ejemplo.com', nombre: 'Invitado de prueba', empresa: 'Empresa de ejemplo, S.A. de C.V.', folio: RF.evento.prefijoFolio + '-DEMO01' },
+      { correo: 'invitada@ejemplo.com', nombre: 'Invitada de prueba', empresa: 'Otra empresa de ejemplo', folio: RF.evento.prefijoFolio + '-DEMO02' },
+      { correo: 'asistente@ejemplo.com', nombre: 'Asistente de ejemplo', empresa: '', folio: RF.evento.prefijoFolio + '-DEMO03' }
+    ];
+    for (var i = 0; i < muestra.length; i++) {
+      var k = await RF.claveDeCorreo(muestra[i].correo);
+      invitados[k] = muestra[i];
+      if (i === 0) confirmaciones[k] = Date.now() - 2 * 86400000;
+    }
+    fuente = { registrar: async function (clave) { asistencias[clave] = { en: Date.now(), por: 'prueba' }; refrescar(); } };
+    $('#salir').hidden = true;
+    $('#usuario').textContent = 'Modo de prueba';
+    indexar(); refrescar();
+    mostrar('vPrincipal');
+  }
+
+  /* ---------- con Firebase ---------- */
+  async function iniciarFirebase() {
+    var fb;
+    try { fb = await RF.firebase(true); }
+    catch (e) { console.error(e); mostrar(''); var g = $('#errorGeneral'); g.textContent = RF.mensajeError(e); g.hidden = false; return; }
+    var u = fb.u, d = fb.d, db = fb.db, escuchando = false;
+    var salir = function () { detenerCamara(); u.signOut(fb.auth).then(function () { location.reload(); }); };
+    $('#salir').addEventListener('click', salir);
+    $('#salir2').addEventListener('click', salir);
+    $('#copiarUid').addEventListener('click', function () {
+      if (navigator.clipboard) navigator.clipboard.writeText($('#uid').textContent).then(function () { $('#copiarUid').textContent = 'Código copiado'; });
+    });
+    $('#formLogin').addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      var boton = ev.target.querySelector('button'), err = $('#lError');
+      err.hidden = true; boton.disabled = true; boton.textContent = 'Entrando…';
+      try { await u.signInWithEmailAndPassword(fb.auth, $('#lCorreo').value.trim(), $('#lClave').value); }
+      catch (e) { err.textContent = RF.mensajeError(e); err.hidden = false; }
+      boton.disabled = false; boton.textContent = 'Entrar';
+    });
+    u.onAuthStateChanged(fb.auth, async function (usuario) {
+      if (!usuario) { mostrar('vLogin'); return; }
+      mostrar('vCargando');
+      var rol = null;
+      try { rol = (await RF.conTiempo(d.get(d.ref(db, 'staff/' + usuario.uid)))).val(); } catch (e) { console.error(e); }
+      if (!rol) {
+        $('#uid').textContent = usuario.uid;
+        $('#correoSinPermiso').textContent = usuario.email || 'Tu cuenta';
+        mostrar('vSinPermiso');
+        return;
+      }
+      $('#usuario').textContent = 'Sesión: ' + (usuario.email || usuario.uid);
+      if (!escuchando) {
+        escuchando = true;
+        var falla = function (e) { console.error(e); resultado('error', 'No se pudo leer la lista', RF.mensajeError(e)); };
+        d.onValue(d.ref(db, 'invitados'), function (s) { invitados = s.val() || {}; indexar(); refrescar(); }, falla);
+        d.onValue(d.ref(db, 'confirmaciones'), function (s) { confirmaciones = s.val() || {}; refrescar(); }, falla);
+        d.onValue(d.ref(db, 'asistencias'), function (s) { asistencias = s.val() || {}; refrescar(); }, falla);
+        var espera = null;
+        d.onValue(d.ref(db, '.info/connected'), function (s) {
+          clearTimeout(espera);
+          if (s.val() === true) $('#sinRed').hidden = true;
+          else espera = setTimeout(function () { $('#sinRed').hidden = false; }, 3000);
+        });
+        fuente = { registrar: function (clave) { return d.set(d.ref(db, 'asistencias/' + clave), { en: d.serverTimestamp(), por: usuario.uid }); } };
+      }
+      mostrar('vPrincipal');
+    });
+  }
+
+  if (RF.demo) iniciarDemo(); else iniciarFirebase();
+})();
+</script>
+</body>
+</html>
